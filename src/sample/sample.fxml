@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <bottom>
+        <HBox prefHeight="26.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+    </bottom>
+    <left>
+        <VBox prefHeight="474.0" prefWidth="191.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="importFile" defaultButton="true" mnemonicParsing="false" onAction="#openFile" prefHeight="25.0" prefWidth="170.0" text="Open File/Create Network">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="10.0" top="5.0" />
+                    </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+                </Button>
+                <Label text="Enter Protein 1:">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="protein1" promptText="Protein 1">
+                    <VBox.margin>
+                        <Insets left="15.0" right="10.0" top="1.0" />
+                    </VBox.margin>
+                </TextField>
+                <Label layoutX="20.0" layoutY="60.0" text="Enter Protein 2:">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="15.0" right="10.0" top="5.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="protein2" layoutX="20.0" layoutY="83.0" promptText="Protein 2">
+                    <VBox.margin>
+                        <Insets left="15.0" right="10.0" top="1.0" />
+                    </VBox.margin>
+                </TextField>
+                <Button fx:id="addInteraction" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#userNodes" prefHeight="25.0" prefWidth="170.0" text="Add Interaction">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Label layoutX="20.0" layoutY="118.0" text="Calculate Degree of a Node:">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="15.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="degreeField" layoutX="20.0" layoutY="83.0" promptText="Protein">
+                    <VBox.margin>
+                        <Insets left="15.0" right="10.0" top="1.0" />
+                    </VBox.margin>
+                </TextField>
+                <Button fx:id="calcDegree" layoutX="20.0" layoutY="176.0" mnemonicParsing="false" onAction="#getDegree" prefHeight="25.0" prefWidth="170.0" text="Calculate">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="aveDegree" layoutX="20.0" layoutY="279.0" mnemonicParsing="false" onAction="#aveDegree" prefHeight="25.0" prefWidth="170.0" text="Average Degree">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="maxDegree" layoutX="20.0" layoutY="324.0" mnemonicParsing="false" onAction="#maxDegree" prefHeight="25.0" prefWidth="170.0" text="Max Degree">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="degreeDistBut" layoutX="20.0" layoutY="369.0" mnemonicParsing="false" onAction="#degreeDistribution" prefHeight="25.0" prefWidth="170.0" text="Save Degree Distribution">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Button>
+            <Line endX="80.0" fill="#4a4a4a" startX="-100.0" stroke="#8a8a8a">
+               <VBox.margin>
+                  <Insets left="7.0" top="3.0" />
+               </VBox.margin>
+            </Line>
+            <Button fx:id="clearNetwork" cancelButton="true" mnemonicParsing="false" onAction="#clearNet" prefHeight="25.0" prefWidth="170.0" text="CLEAR NETWORK" textFill="#c31717">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="10.0" top="12.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            </children>
+        </VBox>
+    </left>
+   <top>
+      <HBox prefHeight="15.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <TextArea fx:id="output" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Output" wrapText="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="5.0" right="20.0" top="5.0" />
+         </BorderPane.margin>
+      </TextArea>
+   </center>
+</BorderPane>
